@@ -34,16 +34,18 @@ public class PopulationGrowthService {
 
     private CbsaToMsaEntity getCbsaToMsaEntity(String finalCbsa, String lsad) {
         return cbsaToMsaRepository.findMsaByCbsa(finalCbsa, lsad);
+
+        //throw entity not found exception if null
     }
 
     private String getFinalCbsaFromPreliminaryCbsa(String preliminaryCbsa) {
-        String mdiv = cbsaToMsaRepository.findMdivByCbsa(preliminaryCbsa);
+        String cbsa = cbsaToMsaRepository.findCbsaByMdiv(preliminaryCbsa);
 
-        if (mdiv == null || mdiv.isEmpty()) {
+        if (cbsa == null || cbsa.isEmpty()) {
             return preliminaryCbsa;
         }
 
-        return mdiv;
+        return cbsa;
     }
 
     private String getCbsaFromZipcode(String zipcode) throws Exception {
@@ -54,5 +56,7 @@ public class PopulationGrowthService {
         } else {
             return cbsa;
         }
+
+        //throw cbsa not found exception if null
     }
 }

@@ -16,5 +16,7 @@ public class PopulationGrowthController {
     @GetMapping("/v1/zipcode/{zipcode}/populationGrowth")
     public PopulationGrowth getPopulationGrowthByZipcode(@PathVariable("zipcode") final String zipcode) throws Exception {
         return populationGrowthService.getPopulationGrowth(zipcode);
+
+        //return status
     }
 }
