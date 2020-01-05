@@ -12,6 +12,6 @@ public interface CbsaToMsaRepository extends JpaRepository<CbsaToMsaEntity, Stri
     @Query(value = "select mdiv from cbsa_to_msa where cbsa = :preliminaryCbsa limit 1", nativeQuery = true)
     String findMdivByCbsa(@Param("preliminaryCbsa") String preliminaryCbsa);
 
-    @Query(value = "select * from cbsa_to_msa where cbsa = :finalCbsa and lsad = :lsad limit 1", nativeQuery = true)
+    @Query(value = "select * from cbsa_to_msa where cbsa = :finalCbsa and lsad = :lsad and name is not null and popestimate2014 is not null and popestimate2015 is not null limit 1", nativeQuery = true)
     CbsaToMsaEntity findMsaByCbsa(@Param("finalCbsa") String finalCbsa, @Param("lsad") String lsad);
 }
