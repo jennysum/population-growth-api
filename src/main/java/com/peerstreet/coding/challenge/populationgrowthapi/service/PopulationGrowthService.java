@@ -23,15 +23,17 @@ public class PopulationGrowthService {
     @Autowired
     private PopulationGrowthMapper populationGrowthMapper;
 
+    static final private String METROPOLITAN_STATISTICAL_AREA = "Metropolitan Statistical Area";
+
     public PopulationGrowth getPopulationGrowth(String zipcode) throws Exception {
         String preliminaryCbsa = getCbsaFromZipcode(zipcode);
         String finalCbsa = getFinalCbsaFromPreliminaryCbsa(preliminaryCbsa);
-        CbsaToMsaEntity cbsaToMsaEntity = getCbsaToMsaEntity(finalCbsa);
+        CbsaToMsaEntity cbsaToMsaEntity = getCbsaToMsaEntity(finalCbsa, METROPOLITAN_STATISTICAL_AREA);
         return populationGrowthMapper.toPopulationGrowth(zipcode, cbsaToMsaEntity);
     }
 
-    private CbsaToMsaEntity getCbsaToMsaEntity(String finalCbsa) {
-        return cbsaToMsaRepository.findMsaByCbsa(finalCbsa);
+    private CbsaToMsaEntity getCbsaToMsaEntity(String finalCbsa, String lsad) {
+        return cbsaToMsaRepository.findMsaByCbsa(finalCbsa, lsad);
     }
 
     private String getFinalCbsaFromPreliminaryCbsa(String preliminaryCbsa) {

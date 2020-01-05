@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CbsaToMsaRepository extends JpaRepository<CbsaToMsaEntity, String> {
 
-    @Query(value = "select mdiv from cbsa_to_msa where cbsa = :preliminaryCbsa", nativeQuery = true)
+    @Query(value = "select mdiv from cbsa_to_msa where cbsa = :preliminaryCbsa limit 1", nativeQuery = true)
     String findMdivByCbsa(@Param("preliminaryCbsa") String preliminaryCbsa);
 
-    @Query(value = "select * from cbsa_to_msa where cbsa = :finalCbsa", nativeQuery = true)
-    CbsaToMsaEntity findMsaByCbsa(@Param("finalCbsa") String finalCbsa);
+    @Query(value = "select * from cbsa_to_msa where cbsa = :finalCbsa and lsad = :lsad limit 1", nativeQuery = true)
+    CbsaToMsaEntity findMsaByCbsa(@Param("finalCbsa") String finalCbsa, @Param("lsad") String lsad);
 }

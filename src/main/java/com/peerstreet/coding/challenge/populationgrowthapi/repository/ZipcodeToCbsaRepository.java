@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ZipcodeToCbsaRepository extends JpaRepository<ZipcodeToCbsaEntity, String> {
 
-    @Query(value = "select cbsa from zipcode_to_cbsa where zip = :zipcode", nativeQuery = true)
+    @Query(value = "select cbsa from zipcode_to_cbsa where zip = :zipcode limit 1", nativeQuery = true)
     String findCbsaByZipcode(@Param("zipcode") String zipcode);
 }
