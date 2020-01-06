@@ -1,5 +1,8 @@
 package com.peerstreet.coding.challenge.populationgrowthapi.validator;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PopulationGrowthValidator {
 
     public boolean isValid(String zipcode) {
