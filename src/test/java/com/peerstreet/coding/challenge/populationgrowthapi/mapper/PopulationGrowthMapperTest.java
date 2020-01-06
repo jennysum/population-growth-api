@@ -1,6 +1,6 @@
 package com.peerstreet.coding.challenge.populationgrowthapi.mapper;
 
-import com.peerstreet.coding.challenge.populationgrowthapi.model.CbsaToMsaEntity;
+import com.peerstreet.coding.challenge.populationgrowthapi.model.entity.CbsaToMsaEntity;
 import com.peerstreet.coding.challenge.populationgrowthapi.model.Population;
 import com.peerstreet.coding.challenge.populationgrowthapi.model.PopulationGrowth;
 import org.junit.jupiter.api.BeforeAll;

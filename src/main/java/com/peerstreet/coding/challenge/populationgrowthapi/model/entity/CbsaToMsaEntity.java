@@ -1,4 +1,4 @@
-package com.peerstreet.coding.challenge.populationgrowthapi.model;
+package com.peerstreet.coding.challenge.populationgrowthapi.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

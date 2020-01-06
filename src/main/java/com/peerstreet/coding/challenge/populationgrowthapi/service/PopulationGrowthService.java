@@ -2,7 +2,7 @@ package com.peerstreet.coding.challenge.populationgrowthapi.service;
 
 import com.peerstreet.coding.challenge.populationgrowthapi.exception.ResourceNotFoundException;
 import com.peerstreet.coding.challenge.populationgrowthapi.mapper.PopulationGrowthMapper;
-import com.peerstreet.coding.challenge.populationgrowthapi.model.CbsaToMsaEntity;
+import com.peerstreet.coding.challenge.populationgrowthapi.model.entity.CbsaToMsaEntity;
 import com.peerstreet.coding.challenge.populationgrowthapi.model.PopulationGrowth;
 import com.peerstreet.coding.challenge.populationgrowthapi.repository.CbsaToMsaRepository;
 import com.peerstreet.coding.challenge.populationgrowthapi.repository.ZipcodeToCbsaRepository;

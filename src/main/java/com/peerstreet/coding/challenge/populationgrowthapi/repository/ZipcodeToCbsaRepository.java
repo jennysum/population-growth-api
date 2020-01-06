@@ -1,6 +1,6 @@
 package com.peerstreet.coding.challenge.populationgrowthapi.repository;
 
-import com.peerstreet.coding.challenge.populationgrowthapi.model.ZipcodeToCbsaEntity;
+import com.peerstreet.coding.challenge.populationgrowthapi.model.entity.ZipcodeToCbsaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
